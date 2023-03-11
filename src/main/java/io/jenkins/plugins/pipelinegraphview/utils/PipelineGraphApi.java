@@ -87,7 +87,7 @@ public class PipelineGraphApi {
   }
 
   public PipelineGraph createTree() {
-    PipelineNodeGraphAdapter builder = new PipelineNodeGraphAdapter(run);
+    PipelineGraphNodeVisitor builder = new PipelineGraphNodeVisitor(run);
     // We want to remap children here, so we don't update the parents of the original objects - as
     // these are completely new representations.
     List<PipelineStageInternal> stages = getPipelineNodes(builder);
